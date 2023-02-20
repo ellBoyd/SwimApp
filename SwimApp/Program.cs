@@ -33,7 +33,7 @@ namespace SwimApp
                                 
                 totalTime = (minutes * 60) + seconds;
 
-                Console.WriteLine($"Swimmer Time{i + 1}: {minutes} min {seconds} seconds\nTotal time in seconds: {totalTime}s\n");
+                Console.WriteLine($"Swimmer Time{i + 1}: {minutes} min {seconds} seconds\t\tTotal time in seconds: {totalTime}s");
 
                 sumTotalTime += totalTime;
 
@@ -41,14 +41,18 @@ namespace SwimApp
 
             float avgTime = (float)sumTotalTime / 4;
 
+            string allocatedTeam = "Reserve";
+
             //assign the swimmer to a team
             if (avgTime <= 160)
             {
                 teamA.Add(swimmerName);
+                allocatedTeam = "A";
             }
             else if(avgTime <= 210)
             {
                 teamB.Add(swimmerName);
+                allocatedTeam = "B";
             }
             else
             {
@@ -58,6 +62,7 @@ namespace SwimApp
 
             Console.WriteLine($"Avg time: {avgTime}");
 
+            Console.WriteLine($"Team name: {allocatedTeam}");
 
 
         }
